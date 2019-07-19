@@ -14,8 +14,10 @@ control directly to a user-level trap handler without invoking the
 outer execution environment.
 
 \begin{commentary}
-User-level interrupts are primarily intended to support secure
-embedded systems with only M-mode and U-mode present, but can also be
+User-level interrupts were originally primarily intended to support secure
+embedded systems with only M-mode and U-mode present.  In retrospect,
+such systems are better served by hardwiring {\tt satp} to zero with
+M-mode, S-mode and U-mode all present.  User-level interrupts can also be
 supported in systems running Unix-like operating systems to support
 user-level trap handling.
 
